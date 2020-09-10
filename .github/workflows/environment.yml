@@ -1,0 +1,22 @@
+# Environment
+
+name: Environment
+
+# Trigger
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# Job
+jobs:
+  environment-a:
+    name: Environment A (Ubuntu)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Environment A Step 1
+        uses: actions/checkout@v2
+      - name: Environment A Step 2
+        run: |
+          env | sort
